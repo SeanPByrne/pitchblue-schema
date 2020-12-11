@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema targetNamespace="http://www.vigorsys.com/pitchblue/magnubox/" elementFormDefault="qualified" xmlns="http://www.vigorsys.com/pitchblue/magnubox/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="MB">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="FS">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ID">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Host">
+											<xs:complexType>
+												<xs:attribute name="No" use="required" type="xs:byte"/>
+												<xs:attribute name="Name" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Group">
+											<xs:complexType>
+												<xs:attribute name="ID" use="required" type="xs:string"/>
+												<xs:attribute name="Name" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Recording">
+											<xs:complexType>
+												<xs:attribute name="Start" use="required" type="xs:dateTime"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Updated">
+											<xs:complexType>
+												<xs:attribute name="Time" use="required" type="xs:dateTime"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Committed">
+											<xs:complexType>
+												<xs:attribute name="Time" use="required" type="xs:dateTime"/>
+												<xs:attribute name="Type" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Channel">
+											<xs:complexType>
+												<xs:attribute name="Number" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ShowData">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Episode">
+											<xs:complexType>
+												<xs:attribute name="Number" use="required" type="xs:short"/>
+												<xs:attribute name="ProdId" use="required" type="xs:short"/>
+												<xs:attribute name="Title" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Show">
+											<xs:complexType>
+												<xs:attribute name="Title" use="required" type="xs:string"/>
+												<xs:attribute name="ShortName" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Job">
+											<xs:complexType>
+												<xs:attribute name="ID" use="required" type="xs:string"/>
+												<xs:attribute name="Name" use="required" type="xs:string"/>
+												<xs:attribute name="ShortName" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Rating">
+											<xs:complexType>
+												<xs:attribute name="Main" use="required" type="xs:string"/>
+												<xs:attribute name="Sub" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Scaling">
+											<xs:complexType>
+												<xs:attribute name="Name" use="required" type="xs:string"/>
+												<xs:attribute name="ShortName" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Run">
+											<xs:complexType>
+												<xs:attribute name="ID" use="required" type="xs:string"/>
+												<xs:attribute name="Name" use="required" type="xs:string"/>
+												<xs:attribute name="ShortName" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="AirWindow">
+											<xs:complexType>
+												<xs:attribute name="First" use="required" type="xs:dateTime"/>
+												<xs:attribute name="Last" use="required" type="xs:dateTime"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Dub">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Event">
+											<xs:complexType>
+												<xs:attribute name="Filename" use="required" type="xs:string"/>
+												<xs:attribute name="Location" use="required" type="xs:string"/>
+												<xs:attribute name="InpointSOM" use="required" type="xs:string"/>
+												<xs:attribute name="InFrameNO" use="required" type="xs:byte"/>
+												<xs:attribute name="DurationTCDF" use="required" type="xs:string"/>
+												<xs:attribute name="DurationFrames" use="required" type="xs:int"/>
+												<xs:attribute name="Title" use="required" type="xs:string"/>
+												<xs:attribute name="Type" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Automation">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Recording">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Group" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Type" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Event" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:attribute name="Filename" use="required" type="xs:string"/>
+																					<xs:attribute name="Location" use="required" type="xs:string"/>
+																					<xs:attribute name="LineNum" use="required" type="xs:byte"/>
+																					<xs:attribute name="InpointSOM" use="required" type="xs:string"/>
+																					<xs:attribute name="InFrameNO" use="required" type="xs:int"/>
+																					<xs:attribute name="DurationTCDF" use="required" type="xs:string"/>
+																					<xs:attribute name="DurationFrames" use="required" type="xs:short"/>
+																					<xs:attribute name="Product" use="required" type="xs:string"/>
+																					<xs:attribute name="Title" use="required" type="xs:string"/>
+																					<xs:attribute name="Type" use="required" type="xs:string"/>
+																					<xs:attribute name="Group" use="required" type="xs:string"/>
+																					<xs:attribute name="ID" use="required" type="xs:string"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="Filename" use="required" type="xs:string"/>
+																		<xs:attribute name="Location" use="required" type="xs:string"/>
+																		<xs:attribute name="LineNum" use="required" type="xs:byte"/>
+																		<xs:attribute name="InpointSOM" use="required" type="xs:string"/>
+																		<xs:attribute name="InFrameNO" use="required" type="xs:int"/>
+																		<xs:attribute name="DurationTCDF" use="required" type="xs:string"/>
+																		<xs:attribute name="DurationFrames" use="required" type="xs:short"/>
+																		<xs:attribute name="Title" use="required" type="xs:string"/>
+																		<xs:attribute name="Group" use="required" type="xs:string"/>
+																		<xs:attribute name="ID" use="required" type="xs:string"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="Filename" use="required" type="xs:string"/>
+															<xs:attribute name="Location" use="required" type="xs:string"/>
+															<xs:attribute name="LineNum" use="required" type="xs:byte"/>
+															<xs:attribute name="InpointSOM" use="required" type="xs:string"/>
+															<xs:attribute name="InFrameNO" use="required" type="xs:int"/>
+															<xs:attribute name="DurationTCDF" use="required" type="xs:string"/>
+															<xs:attribute name="DurationFrames" use="required" type="xs:short"/>
+															<xs:attribute name="Title" use="required" type="xs:string"/>
+															<xs:attribute name="ID" use="required" type="xs:string"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="Filename" use="required" type="xs:string"/>
+												<xs:attribute name="Location" use="required" type="xs:string"/>
+												<xs:attribute name="LineNum" use="required" type="xs:byte"/>
+												<xs:attribute name="InpointSOM" use="required" type="xs:string"/>
+												<xs:attribute name="InFrameNO" use="required" type="xs:byte"/>
+												<xs:attribute name="DurationTCDF" use="required" type="xs:string"/>
+												<xs:attribute name="DurationFrames" use="required" type="xs:int"/>
+												<xs:attribute name="Title" use="required" type="xs:string"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Type" use="required" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="FormatSheetID" use="required" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
